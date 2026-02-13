@@ -1,0 +1,30 @@
+/* --- Imports --- */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Noto+Sans+KR:wght@400;700&family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;700&display=swap');
+
+/* --- Variables --- */
+
+// $white: #fff;
+$dark: #28282b;
+// $orange: #e67e22ff;
+// $accent: #e67e22;
+
+/* --- Reset & Base Styles --- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  background-color: $dark;
+}
+
+body {
+  font-size: 16px;
+  background-color: $dark;
+  margin: 0;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
