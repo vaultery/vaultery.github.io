@@ -1,17 +1,16 @@
 .carousel {
   width: 100%;
-  padding: 16px 0;
+  padding: 12px 0; // Трохи зменшили вертикальний відступ
   z-index: 100;
 
   .slick-slide {
     display: flex;
     justify-content: center;
-    align-items: flex-start;  /* картка зверху */
-    padding: 0 6px;           /* простір між слайдами */
+    align-items: flex-start;
+    padding: 0 6px;
     box-sizing: border-box;
   }
 
-  /* Внутрішній контейнер слайда */
   .slick-slide > div {
     display: flex;
     justify-content: center;
@@ -19,14 +18,15 @@
 
   /* Точки навігації */
   .slick-dots {
-    bottom: -20px;
-
-    li button:before {
-      font-size: 10px;
-      color: #bbb;
-      opacity: 1;
+    bottom: -10px;
+    li {
+      margin: 0 2px;
+      button:before {
+        font-size: 8px;
+        color: #bbb;
+        opacity: 1;
+      }
     }
-
     li.slick-active button:before {
       color: #333;
     }
@@ -41,32 +41,32 @@
 /* Tablet */
 @media (min-width: 768px) {
   .carousel {
-    padding: 24px 32px;
+    padding: 16px 24px; // Зменшено з 24px 32px
     .slick-arrow { display: block !important; }
   }
 }
 
-/* Desktop */
+/* Desktop - було 1024px, стало 800px */
 @media (min-width: 1024px) {
   .carousel {
-    max-width: 1024px;
+    max-width: 800px; 
     margin: 0 auto;
-    padding: 32px 0;
+    padding: 20px 0;
   }
 }
 
-/* Large screens */
+/* Large screens - було 1400px, стало 1000px */
 @media (min-width: 1440px) {
   .carousel {
-    max-width: 1400px;
+    max-width: 1000px;
     margin: 0 auto;
   }
 }
 
-/* Extra-large screens */
+/* Extra-large screens - було 1800px, стало 1200px */
 @media (min-width: 1920px) {
   .carousel {
-    max-width: 1800px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 }

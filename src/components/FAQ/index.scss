@@ -1,3 +1,73 @@
-.faq-container{
-    background: black;
+$white: #fff;
+$dark: #28282b;
+$accent-orange: #e67e22;
+
+/* FAQ ПРАВКИ */
+.faq-container {
+  padding-block: 40px;
+  background-color: $dark;
+  
+  .faq-list {
+    width: 100%;
+    max-width: 450px; // Трохи збільшив для кращого читання
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  h5 {
+    color: #fff;
+    margin-bottom: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  h6 {
+    color: #fff;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.faq-content {
+  padding-top: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  line-height: 1.6;
+
+  strong {
+    color: $accent-orange;
+  }
+}
+
+/* БЛОК ПОШТИ */
+.contact-section {
+  .contact-label {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+
+  .contact-email {
+    color: $accent-orange;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px dashed rgba($accent-orange, 0.5);
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: lighten($accent-orange, 10%);
+      border-bottom-color: $accent-orange;
+      opacity: 0.9;
+    }
+  }
 }

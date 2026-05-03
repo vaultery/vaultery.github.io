@@ -1,149 +1,144 @@
+@keyframes shine {
+  0% { left: -100%; }
+  20% { left: 125%; }
+  100% { left: 125%; }
+}
+
 .card {
   display: flex;
   flex-direction: column;
   background: #fff;
-  // border-radius: 12px;
-  border-radius: 0px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
-  
-
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 0.75rem;
   width: 100%;
+  transition: transform 0.3s ease;
 
-  // Desktop: Обмежуємо розмір картки за розміром фото
+  &:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
   @media (min-width: 768px) {
     width: fit-content;
-    max-width: 350px; // Опціонально: щоб картка не була завеликою
+    max-width: 350px;
   }
 
   &__image {
     display: block;
     width: 100%;
-
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    &--grayscale {
+      filter: grayscale(100%);
+      opacity: 1;
+    }
   }
 
   &__body {
-    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    padding: 1.25rem;
+    gap: 0.4rem;
   }
 
   &__title {
     margin: 0;
-    font-size: 1.25rem;
-    color: #222;
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    font-weight: 800;
   }
 
   &__description {
     margin: 0;
     font-size: 0.95rem;
     color: #555;
-    line-height: 1.4;
+    line-height: 1.5;
+  }
+
+  &__tags {
+    margin: 0.5rem 0 0.8rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  &__badge {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    white-space: nowrap;
+    background-color: #f0f2f5; 
+    color: #444;
+    border: 1px solid transparent;
+
+    &--триває { 
+      background-color: #e8f5e9; 
+      color: #2e7d32; 
+      border-color: #c8e6c9;
+    }
+    &--закрито { 
+      background-color: #ffebee; 
+      color: #c62828; 
+      border-color: #ffcdd2;
+    }
+    &--розіграш { 
+      background-color: #fff3e0;
+      color: #ef6c00;
+      border-color: #ffe0b2;
+    }
+  }
+
+  &__button_donate {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+    background-color: #222;
+    color: #fff !important;
+    text-decoration: none;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 700;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transform: skewX(-25deg);
+      animation: shine 4s infinite;
+    }
+
+    &:hover {
+      background-color: #000;
+      transform: scale(1.02);
+      &::after { animation: shine 1.5s infinite; }
+    }
   }
 
   &__button_more {
     display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    background-color: white;
-    color: black;
+    margin-top: 0.4rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    background-color: transparent;
+    color: #888;
     text-decoration: none;
-    border: 2px solid black;
-    border-radius: 8px;
     text-align: center;
     font-weight: 600;
-    transition: opacity 0.2s;
-    
+
     &:hover {
-      opacity: 0.8;
+      color: #222;
+      text-decoration: underline;
     }
-
-    // @media (min-width: 768px) {
-    //   align-self: flex-start; // На десктопі кнопка не на всю ширину
-    // }
-  }
-
-  &__button {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    background-color: #000;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: 600;
-    transition: opacity 0.2s;
-    
-    &:hover {
-      opacity: 0.8;
-    }
-
-    // @media (min-width: 768px) {
-    //   align-self: flex-start; // На десктопі кнопка не на всю ширину
-    // }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.card__image-wrapper {
-  position: relative;
-}
-
-.card__badges {
-  position: absolute;
-  bottom: 0.5rem;
-  right: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.card__badge {
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.7rem;
-  font-weight: bold;
-  color: #fff;
-  white-space: nowrap;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Стилі для конкретних плашечок */
-.card__badge--триває {
-  background-color: #28a745; // зелений
-}
-
-.card__badge--розіграш {
-  background-color: #ffc107; // жовтий
-  color: #000;
-}
-
-.card__badge--закритий {
-  background-color: red; // жовтий
-  color: #000;
-}
-
