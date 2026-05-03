@@ -19,7 +19,7 @@ const headerCards = [
     image: Poster, 
     tags: ["Закрито"],              
     buttonDonateText: "ЗВІТ 📂",
-    buttonDonateLink: "https://music.youtube.com/playlist?list=OLAK5uy_ntr7rK3elMa7EjGxoZDgc-Bac1R6puMeg",
+    buttonDonateLink: "https://drive.google.com/drive/folders/1eL9yknp9pf1DlaUmMGwEXNXsFoK2WaXI?usp=sharing",
     buttonMoreText: "Детальніше 🔍",
     buttonMoreLink: ""
   },
@@ -30,7 +30,7 @@ const headerCards = [
     image: Poster2, 
     tags: ["Закрито"], 
     buttonDonateText: "ЗВІТ 📂",
-    buttonDonateLink: "https://music.youtube.com/playlist?list=OLAK5uy_ntr7rK3elMa7EjGxoZDgc-Bac1R6puMeg",
+    buttonDonateLink: "https://drive.google.com/drive/folders/1MiQW0NOJB6PrZ-C5SJu4RggWwy5crx1s?usp=drive_link",
     buttonMoreText: "Детальніше 🔍",
     buttonMoreLink: ""
 
